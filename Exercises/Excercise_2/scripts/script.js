@@ -19,3 +19,7 @@ process.stdin.on("data", (data) => {
     // console.log(counter)
     // console.log(`La palabra que mas se repite es: `, counter.hola )
 });
+
+
+
+
