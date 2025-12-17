@@ -1,0 +1,35 @@
+body {
+    height: 80vh;
+    text-align: center;
+    background-color: #101010;
+    color: white;
+    display: flex;
+    justify-content: center;  
+    align-items: center;
+  }
+  
+  h1 {
+    font-family: Arial, sans-serif;
+  }
+  
+  input {
+    padding: 5px;
+    font-size: 16px;
+  }
+
+  button {
+    padding: 8px 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  #mensaje {
+    color: #9a9a9a;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  
