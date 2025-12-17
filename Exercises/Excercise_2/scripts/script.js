@@ -1,19 +1,21 @@
-const text = "amazon prepares future software developers";
-
-let conteo = {};
-
-const separate = text.split(" ");
-
-separate.forEach(element => {
-    let value = separate.filter(x => x == element);
-    if(element == value){
-        conteo[element];
-        conteo[element] = 1;
-    } else {
-        conteo[element]++;
-    }
-
-    console.log(value)
+process.stdin.on("data", (data) => {
+    const input = String(data);
+    input.trim();
+    input.toLocaleLowerCase;
     
+    let arrayFrase = input.split(' ');
+    let counter = {};
+
+    arrayFrase.forEach(element => {
+        if(element.length > 3){
+            if(counter[element]){
+                counter[element]++;
+            }else{
+                counter[element] = 1;
+            }            
+        }
+    });
+
+    // console.log(counter)
+    // console.log(`La palabra que mas se repite es: `, counter.hola )
 });
-console.log(conteo)
