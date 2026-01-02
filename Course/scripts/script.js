@@ -234,3 +234,33 @@ class Ingeniero extends Personal { // *Se declara la clase `Ingeniero` como subc
 
 let ingeniero1 = new Ingeniero('Carlos', 32, 'Mantenimiento'); // *Se crea una instancia de la clase `Ingeniero`.
 ingeniero1.experiencia(); // *Se ejecuta un método de la subclase que utiliza herencia.
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// ~Polimorfismo.
+// ~El polimorfismo es un principio fundamental de la Programación Orientada a Objetos (OOP) que permite que objetos de diferentes clases respondan al mismo mensaje o método de manera diferente, donde normalmente esto aplica con superclases y subclases. Esto significa que un mismo método puede tener múltiples implementaciones, dependiendo del tipo de objeto que lo invoque. Un ejemplo común de polimorfismo es la **sobrescritura de métodos**, donde una subclase redefine un método heredado de su superclase para proporcionar un comportamiento específico. Esto, en pocas palabras, podemos decir que el polimorfismo es la capacidad que tiene una subclase para redefinir un método que ya se encuentra en su superclase, donde esta subclase hará overwrite (sobrescribir) el método heredado para adaptarlo a sus necesidades específicas.
+class Intrumento { // *Se declara la clase base `Intrumento`, la cual funcionará como superclase.
+    constructor(nombre) { // *Constructor de la clase `Intrumento`, recibe el nombre del instrumento.
+        this.nombre = nombre; // *Se asigna el valor recibido a la propiedad `nombre` del objeto.
+    } // *Cierre del constructor.
+
+    tocar() { // *Método definido en la superclase que puede ser heredado o sobrescrito por subclases.
+        console.log(`El instrumento ${this.nombre} está sonando.`); // *Comportamiento general para cualquier instrumento.
+    } // *Cierre del método `tocar`.
+} // *Cierre de la clase `Intrumento`.
+
+class Guitarra extends Intrumento { // *Se declara la subclase `Guitarra`, que hereda de `Intrumento`.
+    constructor() { // *Constructor de la subclase `Guitarra`.
+        super('Guitarra'); // *Se llama al constructor de la superclase y se inicializa el nombre del instrumento.
+    } // *Cierre del constructor.
+
+    tocar() { // *Sobrescritura (override) del método `tocar` heredado de la superclase.
+        console.log(`La ${this.nombre} esta tocando un solo espectacular.`); // *Implementación específica para la guitarra (polimorfismo).
+    } // *Cierre del método `tocar`.
+} // *Cierre de la clase `Guitarra`.
+
+let guitarra1 = new Guitarra(); // *Se crea una instancia de la clase `Guitarra`.
+guitarra1.tocar(); // *Se invoca el método `tocar`, ejecutando la versión sobrescrita de la subclase.
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
