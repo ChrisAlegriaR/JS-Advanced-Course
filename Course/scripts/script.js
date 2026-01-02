@@ -191,3 +191,33 @@ let coche1 = new Coche('Nissan', 'Tsuru', 23000); //* Se crea una instancia de l
 console.log(coche1.establecerNuevoPrecio(50000)); //* Se modifica el precio usando el método SET y se imprime el nuevo valor en consola.
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+class Testeo {
+
+    #nombre;
+    #edad;
+    constructor(nombre, edad){
+        this.#nombre = nombre;
+        this.#edad = edad;
+    }
+
+    cambiarEdad(nuevaEdad){
+        if(nuevaEdad < 18){
+            return 'Lo sentimos no puedes dar de alta una edad menor a 18 años';
+        }else{
+            this.#edad = nuevaEdad;
+            return this.#edad;
+        }
+    }
+}
+
+let test1 = new Testeo('Jesus', 23);
+console.log(test1.cambiarEdad(20))
