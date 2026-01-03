@@ -422,3 +422,19 @@ class Cafetera extends SistemaCafetera{ //* Subclase concreta que implementa el 
 
 let solicitudCafe1 = new Cafetera('Cappuccino'); //* Se crea una instancia válida desde una subclase concreta.
 solicitudCafe1.hacerCafe(); //* Ejecuta el flujo completo definido por la superclase abstracta.
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// ~Static.
+// ~El modificador `static` se utiliza para **declarar propiedades y métodos que pertenecen directamente a la clase** y no a las instancias. Esto significa que **podemos acceder a estos elementos sin necesidad de crear un objeto de la clase**, lo que resulta útil cuando queremos manejar datos o funcionalidades **comunes a toda la clase** y que no dependen del estado de un objeto individual. Por ejemplo, se pueden usar métodos estáticos para **funciones utilitarias** como sumar números o convertir unidades, para **contadores compartidos** que lleven la cuenta de cuántos objetos de una clase se han creado, o para **constantes de clase** como valores de configuración que deben ser iguales para todos los objetos. Para definir un método o propiedad estática, se utiliza la palabra reservada `static` antes del nombre de la propiedad o método dentro de la clase. A diferencia de las propiedades y métodos normales, **los elementos estáticos no se acceden mediante instancias**, sino directamente a través del nombre de la clase, por ejemplo: `Clase.metodoEstatico()` o `Clase.propiedadEstatica`. Esto permite tener funciones y valores **globales a la clase** sin depender de ningún objeto específico, y es útil cuando queremos centralizar lógica o datos que deben ser iguales para todos los objetos.
+console.log('\n=========== Static ==========='); // *Indica el inicio de la sección dedicada al concepto de static.
+class DatosEstaticos { // *Se declara la clase `DatosEstaticos`.
+    static datoEstatico = 10; // *Propiedad estática que pertenece a la clase, accesible como `DatosEstaticos.datoEstatico`.
+
+    static suma(a, b) { // *Método estático que realiza una operación común sin depender de una instancia.
+        return a + b; // *Retorna la suma de los parámetros recibidos.
+    } // *Cierre del método `suma`.
+} // *Cierre de la clase `DatosEstaticos`.
+
+console.log(DatosEstaticos.suma(3, 5)); // *Se llama al método estático directamente desde la clase y se imprime el resultado (8).
+console.log(DatosEstaticos.datoEstatico); // *Se accede a la propiedad estática directamente desde la clase (10).
