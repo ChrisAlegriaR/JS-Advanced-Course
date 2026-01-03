@@ -191,6 +191,24 @@ let coche1 = new Coche('Nissan', 'Tsuru', 23000); // *Se crea una instancia de l
 console.log(coche1.establecerNuevoPrecio(50000)); // *Se modifica el precio usando el método SET y se imprime el nuevo valor en consola.
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// ~Throw (Lanzamiento de errores).
+// ~`throw` es una **palabra reservada de JavaScript** que se utiliza para **lanzar errores de forma manual** durante la ejecución de un programa. Su principal característica es que, cuando se ejecuta, **detiene inmediatamente la ejecución del código en ese punto**, interrumpiendo por completo el flujo normal del programa. Esto significa que **ninguna línea de código que se encuentre después del `throw` será ejecutada**, a menos que dicho error sea capturado previamente mediante un bloque `try...catch`. Por esta razón, `throw` se considera una herramienta poderosa y delicada, utilizada para señalar situaciones críticas en las que el programa no debería continuar funcionando de manera normal.
+// &¿Para qué se utiliza throw en JavaScript?
+// &El uso de `throw` es común cuando se desea **forzar un error personalizado** en el programa. A diferencia de los errores automáticos que genera JavaScript (como errores de sintaxis o de tipo), `throw` permite al programador definir **cuándo y por qué** se debe detener la ejecución. Es especialmente útil para validar datos, proteger la lógica interna de funciones o clases, y evitar que el programa continúe ejecutándose con información incorrecta o estados inválidos.
+// ?Comportamiento de throw durante la ejecución del programa.
+// ?Cuando JavaScript encuentra una instrucción `throw`, ocurren varias cosas importantes:
+// ?Primero, el motor de JavaScript **detiene la ejecución inmediata del código**.
+// ?Segundo, el error se propaga hacia arriba en la pila de ejecución.
+// ?Tercero, si no existe un bloque `try...catch` que capture ese error, el programa se rompe y muestra el mensaje de error en consola.
+// ?Por lo tanto, cualquier código escrito después de un `throw` **no se ejecutará**, lo que explica por qué su uso debe ser controlado y consciente.
+// &Throw como mecanismo de control de flujo.
+// &Aunque `throw` no está diseñado para controlar el flujo del programa como un `if` o un bucle, en la práctica se utiliza para **interrumpir la ejecución** cuando se detecta una condición que viola una regla importante del sistema. Esto lo convierte en una herramienta clave para la programación defensiva, donde se busca evitar estados incorrectos antes de que causen problemas mayores.
+// ?Throw Error y throw new Error().
+// ?La forma recomendada de lanzar errores en JavaScript es utilizando `throw new Error()`. Esto crea un **objeto de error estándar**, lo que permite que el error sea identificado, manejado y depurado de manera más clara. Este enfoque es ampliamente utilizado en aplicaciones profesionales, frameworks y sistemas de gran escala, ya que mejora la legibilidad del código y el manejo centralizado de errores.
+// &Uso responsable de throw.
+// &Debido a que `throw` detiene completamente la ejecución del código, debe utilizarse únicamente en situaciones donde **continuar ejecutando el programa podría causar errores mayores o resultados incorrectos**. En la mayoría de los casos, `throw` se combina con bloques `try...catch` para permitir un manejo controlado del error sin que la aplicación se rompa por completo.
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // ~Herencia.
 // ~La herencia es un principio fundamental de la Programación Orientada a Objetos (OOP) que permite crear nuevas clases basadas en clases existentes. La clase que hereda se llama **subclase** o **clase derivada**, mientras que la clase de la cual se hereda se llama **superclase** o **clase base**. La subclase **hereda** todas las propiedades y métodos de la superclase, lo que permite reutilizar código y establecer una relación jerárquica entre las clases. Además, la subclase puede **añadir nuevas propiedades y métodos** o **modificar** los existentes para adaptarlos a sus necesidades específicas. En JavaScript, la herencia se implementa utilizando la palabra clave `extends` para indicar que una clase es una subclase de otra, y el constructor de la subclase debe llamar al constructor de la superclase utilizando `super()`. La herencia facilita la creación de sistemas más organizados, modulares y fáciles de mantener.
@@ -239,6 +257,7 @@ ingeniero1.experiencia(); // *Se ejecuta un método de la subclase que utiliza h
 
 // ~Polimorfismo.
 // ~El polimorfismo es un principio fundamental de la Programación Orientada a Objetos (OOP) que permite que objetos de diferentes clases respondan al mismo mensaje o método de manera diferente, donde normalmente esto aplica con superclases y subclases. Esto significa que un mismo método puede tener múltiples implementaciones, dependiendo del tipo de objeto que lo invoque. Un ejemplo común de polimorfismo es la **sobrescritura de métodos**, donde una subclase redefine un método heredado de su superclase para proporcionar un comportamiento específico. Esto, en pocas palabras, podemos decir que el polimorfismo es la capacidad que tiene una subclase para redefinir un método que ya se encuentra en su superclase, donde esta subclase hará overwrite (sobrescribir) el método heredado para adaptarlo a sus necesidades específicas.
+console.log('\n=========== Polimorfismo ==========='); // *Indica el inicio de la sección dedicada al polimorfismo.
 class Intrumento { // *Se declara la clase base `Intrumento`, la cual funcionará como superclase.
     constructor(nombre) { // *Constructor de la clase `Intrumento`, recibe el nombre del instrumento.
         this.nombre = nombre; // *Se asigna el valor recibido a la propiedad `nombre` del objeto.
@@ -264,3 +283,142 @@ guitarra1.tocar(); // *Se invoca el método `tocar`, ejecutando la versión sobr
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+// ~Throw (Lanzamiento de errores).
+// ~`throw` es una **palabra reservada de JavaScript** que se utiliza para **lanzar errores de forma manual** durante la ejecución de un programa. Su principal característica es que, cuando se ejecuta, **detiene inmediatamente la ejecución del código en ese punto**, interrumpiendo por completo el flujo normal del programa. Esto significa que **ninguna línea de código que se encuentre después del `throw` será ejecutada**, a menos que dicho error sea capturado previamente mediante un bloque `try...catch`. Por esta razón, `throw` se considera una herramienta poderosa y delicada, utilizada para señalar situaciones críticas en las que el programa no debería continuar funcionando de manera normal.
+// &¿Para qué se utiliza throw en JavaScript?
+// &El uso de `throw` es común cuando se desea **forzar un error personalizado** en el programa. A diferencia de los errores automáticos que genera JavaScript (como errores de sintaxis o de tipo), `throw` permite al programador definir **cuándo y por qué** se debe detener la ejecución. Es especialmente útil para validar datos, proteger la lógica interna de funciones o clases, y evitar que el programa continúe ejecutándose con información incorrecta o estados inválidos.
+// ?Comportamiento de throw durante la ejecución del programa.
+// ?Cuando JavaScript encuentra una instrucción `throw`, ocurren varias cosas importantes:
+// ?Primero, el motor de JavaScript **detiene la ejecución inmediata del código**.
+// ?Segundo, el error se propaga hacia arriba en la pila de ejecución.
+// ?Tercero, si no existe un bloque `try...catch` que capture ese error, el programa se rompe y muestra el mensaje de error en consola.
+// ?Por lo tanto, cualquier código escrito después de un `throw` **no se ejecutará**, lo que explica por qué su uso debe ser controlado y consciente.
+// &Throw como mecanismo de control de flujo.
+// &Aunque `throw` no está diseñado para controlar el flujo del programa como un `if` o un bucle, en la práctica se utiliza para **interrumpir la ejecución** cuando se detecta una condición que viola una regla importante del sistema. Esto lo convierte en una herramienta clave para la programación defensiva, donde se busca evitar estados incorrectos antes de que causen problemas mayores.
+// ?Throw y errores personalizados.
+// ?JavaScript permite lanzar prácticamente cualquier valor con `throw`, como strings, números u objetos. Sin embargo, **no es una buena práctica lanzar valores simples**, ya que esto dificulta el manejo profesional de errores. En aplicaciones reales, se prefiere lanzar objetos de tipo `Error`, ya que estos incluyen información adicional útil para la depuración, como el mensaje del error y la traza de ejecución.
+// &Throw Error y throw new Error().
+// &La forma recomendada de lanzar errores en JavaScript es utilizando `throw new Error()`. Esto crea un **objeto de error estándar**, lo que permite que el error sea identificado, manejado y depurado de manera más clara. Este enfoque es ampliamente utilizado en aplicaciones profesionales, frameworks y sistemas de gran escala, ya que mejora la legibilidad del código y el manejo centralizado de errores.
+// ?Uso responsable de throw.
+// ?Debido a que `throw` detiene completamente la ejecución del código, debe utilizarse únicamente en situaciones donde **continuar ejecutando el programa podría causar errores mayores o resultados incorrectos**. En la mayoría de los casos, `throw` se combina con bloques `try...catch` para permitir un manejo controlado del error sin que la aplicación se rompa por completo.
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// ~Abstracción.
+// ~La abstracción consiste en tomar elementos del mundo real y representarlos dentro de un programa, ocultando los detalles complejos de su funcionamiento interno. Su objetivo principal es **reducir la complejidad cognitiva** y permitir que el usuario o cliente interactúe únicamente con lo esencial. En este enfoque, una clase abstracta define **qué comportamientos deben existir** (qué acciones se pueden realizar), pero no **cómo se implementan**, dejando esa responsabilidad a las subclases. Esto fomenta un diseño más flexible, desacoplado y fácil de extender, ya que nuevas implementaciones pueden añadirse sin modificar la lógica general. Un ejemplo claro es una máquina de café: el usuario solo elige una opción, mientras que el sistema interno gestiona validaciones, procesos y pasos técnicos sin exponerlos.
+console.log('\n=========== Abstracción ==========='); // *Indica el inicio de la sección dedicada al concepto de abstracción.
+
+// &Uso de new.target para mostrar el nombre que está intentando instanciar la clase abstracta.
+// &`new.target` es una referencia especial proporcionada por JavaScript que existe **únicamente dentro de constructores** y se asigna automáticamente cuando se utiliza la palabra clave `new`. Su función es indicar **qué clase fue realmente utilizada para crear la instancia**, no necesariamente la clase donde se encuentra el constructor. Esto es especialmente útil en escenarios de herencia, ya que aunque se ejecute el constructor de la superclase, `new.target` apuntará a la subclase si fue ella quien realizó la instanciación. Gracias a esto, se pueden crear validaciones avanzadas y simular comportamientos como clases abstractas.
+console.log('--- Uso de new.target para mostrar el nombre que esta intentando instanciar la clase abstracta. ---'); // *Indica que se demostrará el uso de `new.target`.
+
+class SuperclaseNewTarget { // *Se declara una superclase para demostrar el comportamiento de `new.target`.
+    constructor() { // *Constructor de la superclase, el cual se ejecuta al instanciar esta clase o cualquier subclase.
+        console.log(`La clase que esta realizando la instancia es: ${new.target.name}`); // *Muestra el nombre real de la clase que se está instanciando.
+    } // *Cierre del constructor.
+} // *Cierre de la clase `SuperclaseNewTarget`.
+
+class SubclaseNewTarget extends SuperclaseNewTarget { // *Se declara una subclase que hereda de `SuperclaseNewTarget`.
+} // *Cierre de la clase `SubclaseNewTarget`.
+
+let clase1 = new SubclaseNewTarget(); // *Se crea una instancia desde la subclase, pero se ejecuta el constructor de la superclase.
+
+// &Clases abstractas.
+// &Las clases abstractas funcionan como una **plantilla o contrato base** que define qué métodos y comportamientos deben existir en las subclases, pero no permite crear objetos directamente a partir de ellas. Su propósito es evitar implementaciones incompletas y garantizar que todas las clases derivadas sigan una estructura común. Aunque JavaScript no cuenta con una palabra reservada para clases abstractas, este comportamiento se simula usando validaciones con `new.target` dentro del constructor, obligando al desarrollador a utilizar herencia para crear instancias válidas.
+// ?Condicional para convertir una clase en abstracta.
+// ?Este condicional compara `new.target` con la propia clase abstracta. Si ambos coinciden, significa que se utilizó `new` directamente sobre la superclase, lo cual rompe el principio de abstracción y el diseño del sistema. En ese caso se muestra o lanza un error para impedir la creación del objeto. Si no coinciden, significa que la instancia proviene de una subclase, lo cual es el comportamiento esperado, permitiendo que el constructor continúe y se inicialicen las propiedades compartidas.
+console.log('\n--- Condicional para convertir una clase a una clase abstracta. ---'); // *Indica que se demostrará cómo simular una clase abstracta.
+class SuperclaseAbstracta { // *Se declara una clase que actuará como superclase abstracta.
+    constructor() { // *Constructor que se ejecuta al crear una instancia directa o desde una subclase.
+        if (new.target === SuperclaseAbstracta) { // *Se verifica si se intenta instanciar directamente esta clase.
+            console.error("No se puede instanciar una clase abstracta."); // *Se muestra un error para impedir la instanciación directa.
+        } else {
+            // *Bloque reservado para inicializar propiedades cuando la clase es heredada.
+        }
+    } // *Cierre del constructor.
+} // *Cierre de la clase `SuperclaseAbstracta`.
+
+let instanciaClases = new SuperclaseAbstracta(); // *Intento de instanciar directamente la clase abstracta (esto genera error).
+
+// ?Métodos abstractos.
+// ?Los métodos abstractos representan acciones **obligatorias y esperadas** que todas las subclases deben implementar. No contienen lógica funcional en la superclase, sino que definen la firma del método y actúan como una advertencia o contrato. En JavaScript se simulan creando métodos que muestran o lanzan errores si se ejecutan directamente. Esto asegura que una subclase sobrescriba dichos métodos mediante polimorfismo, proporcionando una implementación concreta acorde a su contexto.
+console.log('\n--- Métodos Abstractos. ---'); // *Indica que se demostrará el uso de métodos abstractos.
+class MetodosAbstractos { // *Se declara una superclase que contiene métodos abstractos.
+    constructor(nombre) { // *Constructor de la superclase.
+        if (new.target === MetodosAbstractos) { // *Evita que la superclase sea instanciada directamente.
+            console.error('No se puede instanciar desde esta superclase.'); // *Mensaje de error por uso incorrecto.
+        } else {
+            this.nombre = nombre; // *Inicializa la propiedad cuando se instancia desde una subclase.
+        }
+    } // *Cierre del constructor.
+
+    primerMetodo() { // *Método que actúa como método abstracto.
+        console.error('Este método debe ser sobrescrito mediante polimorfismo en una subclase.'); // *Indica que el método no debe ejecutarse directamente.
+    } // *Cierre del método.
+} // *Cierre de la clase `MetodosAbstractos`.
+
+class MetodoSubclase extends MetodosAbstractos { // *Se declara una subclase que hereda de `MetodosAbstractos`.
+    constructor(nombre) { // *Constructor de la subclase.
+        super(nombre); // *Llama al constructor de la superclase para inicializar propiedades heredadas.
+    } // *Cierre del constructor.
+
+    primerMetodo() { // *Sobrescritura del método abstracto usando polimorfismo.
+        console.log(`Método implementado correctamente para ${this.nombre}.`); // *Implementación concreta del comportamiento.
+    } // *Cierre del método.
+} // *Cierre de la clase `MetodoSubclase`.
+
+let instancia1 = new MetodoSubclase('Primera instancia'); // *Se crea una instancia válida desde la subclase.
+instancia1.primerMetodo(); // *Se ejecuta el método sobrescrito correctamente.
+
+// ?Métodos públicos para definir el comportamiento y flujo general de superclases abstractas.
+// ?Cuando una clase se convierte en abstracta, esta **no puede ser instanciada directamente**, ya que su objetivo no es representar un objeto final, sino **servir como una plantilla o contrato** para sus subclases. Sin embargo, esto no significa que la clase abstracta no pueda contener lógica funcional. Al contrario, uno de los usos más importantes de una superclase abstracta es **definir el flujo general de ejecución de un proceso**, dejando los detalles específicos a las subclases. Para lograr esto, se suelen crear **métodos públicos concretos** dentro de la superclase abstracta. Estos métodos públicos funcionan como un **orquestador del comportamiento**, es decir, determinan **qué pasos se ejecutan, en qué orden y bajo qué estructura**, pero no cómo se ejecuta cada paso en detalle. Este patrón es muy utilizado porque garantiza que todas las subclases sigan el mismo flujo lógico, evitando errores de diseño y asegurando consistencia. Internamente, este método público puede invocar otros métodos utilizando `this.nombreMetodo()`, lo cual es clave porque `this` siempre hace referencia a la instancia concreta (la subclase). Gracias a esto, cuando una subclase sobrescribe un método mediante polimorfismo, el método público de la superclase ejecutará automáticamente la versión correcta, sin necesidad de conocer la implementación específica. En caso de que una subclase no implemente alguno de estos métodos obligatorios, la superclase puede definir versiones base que lancen errores, dejando claro que **ese método debe ser sobrescrito**. Este enfoque refuerza el uso correcto de la herencia y del polimorfismo, y es una base fundamental para patrones como **Template Method**.
+console.log('\n--- Metodos publicos para que van a definir el comportamiento y flujo general de superclases abstractas. ---'); //* Indica el inicio de la demostración del flujo general controlado por una superclase abstracta.
+
+class SistemaCafetera { //* Superclase abstracta que define la estructura general del sistema.
+    constructor(nombre){ //* Constructor de la superclase que recibe datos comunes.
+        if(new.target.name === SistemaCafetera){ //* Verifica si se intenta instanciar directamente la superclase.
+            console.error('No se puede instanciar desde esta superclase.'); //* Impide la creación directa para mantener la abstracción.
+        }else{
+            this.nombre = nombre; //* Inicializa una propiedad compartida que será usada por las subclases.
+        }
+    } //* Cierre del constructor.
+
+    seleccionarBebida(){ //* Método abstracto que define el primer paso del flujo.
+        console.error('A este metodo debe de aplicarse polimorfismo, por ende si ves esto esta mal.'); //* Advierte que este método debe ser sobrescrito.
+    } //* Cierre del método seleccionarBebida.
+
+    prepararBebida(){ //* Método abstracto que define el segundo paso del flujo.
+        console.error('A este metodo debe de aplicarse polimorfismo, por ende si ves esto esta mal.'); //* Refuerza la obligación de sobrescribirlo.
+    } //* Cierre del método prepararBebida.
+
+    servirBebida(){ //* Método abstracto que define el último paso del flujo.
+        console.error('A este metodo debe de aplicarse polimorfismo, por ende si ves esto esta mal.'); //* Indica un uso incorrecto si no se sobrescribe.
+    } //* Cierre del método servirBebida.
+
+    hacerCafe(){ //* Método público concreto que controla el flujo general del sistema.
+        this.seleccionarBebida(); //* Ejecuta el primer paso usando la implementación de la subclase.
+        this.prepararBebida();   //* Ejecuta el segundo paso respetando el orden definido.
+        this.servirBebida();     //* Ejecuta el último paso cerrando el proceso.
+    } //* Cierre del método hacerCafe.
+} //* Cierre de la clase SistemaCafetera.
+
+class Cafetera extends SistemaCafetera{ //* Subclase concreta que implementa el comportamiento real.
+    constructor(nombre){ //* Constructor de la subclase.
+        super(nombre); //* Llama al constructor de la superclase para inicializar propiedades heredadas.
+    } //* Cierre del constructor.
+
+    seleccionarBebida(){ //* Implementación concreta del método abstracto.
+        console.log(`Has seleccionado el cafe tipo ${this.nombre}.`); //* Define cómo se selecciona la bebida.
+    } //* Cierre del método seleccionarBebida.
+
+    prepararBebida(){ //* Implementación concreta del proceso de preparación.
+        console.log(`Preparando el cafe.`); //* Simula la preparación del café.
+    } //* Cierre del método prepararBebida.
+
+    servirBebida(){ //* Implementación concreta del proceso de servido.
+        console.log(`Sirviendo el cafe.`); //* Simula la entrega final de la bebida.
+    } //* Cierre del método servirBebida.
+} //* Cierre de la clase Cafetera.
+
+let solicitudCafe1 = new Cafetera('Cappuccino'); //* Se crea una instancia válida desde una subclase concreta.
+solicitudCafe1.hacerCafe(); //* Ejecuta el flujo completo definido por la superclase abstracta.
