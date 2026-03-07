@@ -1,5 +1,8 @@
-// ^JavaScript Advanced Course.
+// ^JavaScript Advanced.
+// ^JavaScript Advanced es una profundización del lenguaje JavaScript enfocada en comprender su **funcionamiento interno**, sus **mecanismos avanzados** y los **patrones de diseño** que permiten desarrollar aplicaciones más estructuradas y profesionales. En este nivel se estudian conceptos como el **scope**, el **hoisting**, el **closure**, el manejo del **this**, el sistema de **prototipos**, y la **Programación Orientada a Objetos (OOP)** mediante clases, herencia y encapsulamiento. A diferencia de un enfoque básico centrado únicamente en sintaxis y estructuras simples, JavaScript Advanced busca entender cómo el lenguaje realmente ejecuta el código y cómo modelar soluciones escalables y mantenibles. Dominar estos conceptos permite escribir código más limpio, reutilizable y eficiente, además de facilitar la comprensión de frameworks modernos como React o Node, ya que muchos de sus comportamientos internos están fundamentados en estos principios avanzados del lenguaje.
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 // ~¿Que es un paradigma en programacion?.
 // Un paradigma en programacion es un enfoque o estilo que define como se estructuran y escriben los programas. Cada paradigma estbalece reglas sobre como los desarrolladores pueden rear, organizar, y manipular el codigo para resolver problemas.
 // Algunos ejemplos incluyen la programacion imperativa, orientada a objetos, funcional y logica, cada una con sus propias caracteristicas y principios.
